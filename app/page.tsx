@@ -164,7 +164,7 @@ export default function MaguOrderHub() {
                   placeholder="Order ID"
                   value={form.id}
                   onChange={(e) =>
-                    setForm((f) => ({ ...f, id: e.target.value }))
+                    setForm((f: typeof form) => ({ ...f, id: e.target.value }))
                   }
                   className="px-2 py-2 border rounded"
                 />
@@ -172,7 +172,10 @@ export default function MaguOrderHub() {
                   placeholder="Customer"
                   value={form.customer}
                   onChange={(e) =>
-                    setForm((f) => ({ ...f, customer: e.target.value }))
+                    setForm((f: typeof form) => ({
+                      ...f,
+                      customer: e.target.value,
+                    }))
                   }
                   className="px-2 py-2 border rounded"
                 />
@@ -180,7 +183,10 @@ export default function MaguOrderHub() {
                   placeholder="Product"
                   value={form.product}
                   onChange={(e) =>
-                    setForm((f) => ({ ...f, product: e.target.value }))
+                    setForm((f: typeof form) => ({
+                      ...f,
+                      product: e.target.value,
+                    }))
                   }
                   className="px-2 py-2 border rounded"
                 />
@@ -190,7 +196,7 @@ export default function MaguOrderHub() {
                     placeholder="Qty"
                     value={form.qty}
                     onChange={(e) =>
-                      setForm((f) => ({
+                      setForm((f: typeof form) => ({
                         ...f,
                         qty: Math.max(1, Number(e.target.value)),
                       }))
@@ -202,7 +208,10 @@ export default function MaguOrderHub() {
                     placeholder="Value"
                     value={form.value}
                     onChange={(e) =>
-                      setForm((f) => ({ ...f, value: Number(e.target.value) }))
+                      setForm((f: typeof form) => ({
+                        ...f,
+                        value: Number(e.target.value),
+                      }))
                     }
                     className="px-2 py-2 border rounded"
                   />
@@ -211,7 +220,10 @@ export default function MaguOrderHub() {
                     placeholder="Due"
                     value={form.due}
                     onChange={(e) =>
-                      setForm((f) => ({ ...f, due: e.target.value }))
+                      setForm((f: typeof form) => ({
+                        ...f,
+                        due: e.target.value,
+                      }))
                     }
                     className="px-2 py-2 border rounded"
                   />
@@ -219,7 +231,10 @@ export default function MaguOrderHub() {
                 <select
                   value={form.stage}
                   onChange={(e) =>
-                    setForm((f) => ({ ...f, stage: e.target.value }))
+                    setForm((f: typeof form) => ({
+                      ...f,
+                      stage: e.target.value,
+                    }))
                   }
                   className="px-2 py-2 border rounded"
                 >
