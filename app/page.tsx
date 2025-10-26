@@ -78,8 +78,14 @@ export default function MaguOrderHub() {
   const [view, setView] = useState("summary"); // summary | kanban | picklist
 
   // simple undo history stack
-  const [history, setHistory] = useState([]);
-  const pushHistory = (action) => {
+  type Action = {
+    type: string;
+    payload?: any;
+  };
+
+  const [history, setHistory] = useState<Action[]>([]);
+
+  const pushHistory = (action: Action) => {
     setHistory((h) => {
       const next = [action, ...h].slice(0, 50);
       return next;
